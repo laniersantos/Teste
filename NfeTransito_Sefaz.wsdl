@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.portalfiscal.inf.br/transitoNFe" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.portalfiscal.inf.br/transitoNFe">
 <wsdl:types>
 <s:schema elementFormDefault="qualified" targetNamespace="http://www.portalfiscal.inf.br/transitoNFe">
@@ -46,7 +47,7 @@
 <wsdl:portType name="NfeTransitoSoap">
 <wsdl:operation name="consultarRegistrosPassagem">
 <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-Consultar a NF-e e histórico de registros de passagem.
+Consultar a NF-e e histÃ³rico de registros de passagem.
 </wsdl:documentation>
 <wsdl:input message="tns:consultarRegistrosPassagemSoapIn"/>
 <wsdl:output message="tns:consultarRegistrosPassagemSoapOut"/>
