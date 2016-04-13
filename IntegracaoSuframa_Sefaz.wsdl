@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.sefaz.am.gov.br" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://service.sefaz.am.gov.br" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://service.sefaz.am.gov.br">
+<wsdl:documentation>IntegracaoSuframaService</wsdl:documentation>
+<wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://service.sefaz.am.gov.br">
+<element name="consultaNFE">
+<complexType>
+<sequence>
+<element name="chaveNFE" type="string"/>
+</sequence>
+</complexType>
+</element>
+<element name="consultaNFEResponse">
+<complexType>
+<sequence>
+<element name="consultaNFEReturn" type="string"/>
+</sequence>
+</complexType>
+</element>
+</schema>
+</wsdl:types>
+<wsdl:message name="consultaNFERequest">
+<wsdl:part name="parameters" element="impl:consultaNFE"/>
+</wsdl:message>
+<wsdl:message name="consultaNFEResponse">
+<wsdl:part name="parameters" element="impl:consultaNFEResponse"/>
+</wsdl:message>
+<wsdl:portType name="IntegracaoSuframaServicePortType">
+<wsdl:operation name="consultaNFE">
+<wsdl:input message="impl:consultaNFERequest" wsaw:Action="http://service.sefaz.am.gov.br/IntegracaoSuframa/consultaNFERequest"/>
+<wsdl:output message="impl:consultaNFEResponse" wsaw:Action="http://service.sefaz.am.gov.br/IntegracaoSuframa/consultaNFEResponse"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="IntegracaoSuframaSoapBinding" type="impl:IntegracaoSuframaServicePortType">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="consultaNFE">
+<soap:operation soapAction="" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="IntegracaoSuframaService">
+<wsdl:port name="IntegracaoSuframa" binding="impl:IntegracaoSuframaSoapBinding">
+<soap:address location=""/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
